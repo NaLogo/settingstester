@@ -1,4 +1,4 @@
-QT += qml quick widgets
+QT += qml quick widgets concurrent
 
 CONFIG += c++11, console, qmltypes
 
@@ -10,6 +10,7 @@ VERSION = 1.0.0
 
 SOURCES += \
         cpp/settingstester.cpp \
+        cpp/testworker.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -39,7 +40,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    cpp/settingstester.h
+    cpp/settingstester.h \
+    cpp/testworker.h
 
 DISTFILES += \
     _clang-format \
